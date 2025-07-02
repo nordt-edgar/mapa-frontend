@@ -1,28 +1,26 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import Duda from './pages/Duda'
+import Podologia from './pages/Podologia'
+import EsteticaAvancada from './pages/EsteticaAvancada'
+import Contato from './pages/Contato'
 import Nav from './components/Nav';
-import Footer from './components/Footer';
-import Home from './pages/Home';
-import Sobre from './pages/Sobre';
-import Podologia from './pages/Podologia';
-import EsteticaAvancada from './pages/EsteticaAvancada';
-import Contato from './pages/Contato';
+import Footer from './components/Footer'
 
 function App() {
   return (
-    <Router>
-      <Header />
+    <BrowserRouter basename="/mapa-frontend">
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/sobre" element={<Sobre />} />
+        <Route path="/duda" element={<Duda />} />
         <Route path="/podologia" element={<Podologia />} />
         <Route path="/estetica" element={<EsteticaAvancada />} />
         <Route path="/contato" element={<Contato />} />
       </Routes>
-      <Footer/>
-    </Router>
-  );
+      <Footer />
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App
